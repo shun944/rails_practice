@@ -16,6 +16,16 @@ class StaticPagesController < ApplicationController
   end
   
   def for_study
+    
+    @schedules = Schedule.all.paginate(page: params[:page])
   end
   
+  private
+  
+    def user_params
+      params.require(:user).permit(:name,:email,:password,
+                            :password_confirmation)
+    end
+  
 end
+

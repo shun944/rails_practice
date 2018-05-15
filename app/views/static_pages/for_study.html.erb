@@ -1,5 +1,13 @@
 <% provide(:title, "For study") %>
 <h1>For study</h1>
 <p>
-  test for study!
+  <center>Test for study!</center>
+</p>
+
+<div class="col-md"> <%= button_to "test", "#", class: "btn btn-primary", size:10 %> </div>
+
+<p>
+  <div class="schedules">
+    <%= render @schedules %>
+  </div>
 </p>

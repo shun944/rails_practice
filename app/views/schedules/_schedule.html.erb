@@ -1,0 +1,7 @@
+<li id="schedule-<%= schedule.id %>">
+  <span class="title"> <%= schedule.title %> </span>
+  <p class="content"> <%= schedule.content %> </p>
+  <span class= "timestamp">
+    Posted <%= time_ago_in_words(schedule.created_at) %> ago.
+  </span>
+</li>
