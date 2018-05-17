@@ -85,6 +85,14 @@ class UserTest < ActiveSupport::TestCase
   end
  end
  
+ test "associated schedules should be destroyed" do
+  @user.save
+  @user.schedules.create!(title: "test", content: "test")
+  assert_difference 'Schedule.count', -1 do
+   @user.destroy
+  end
+ end
+ 
  test "should follow and unfollow a user" do
   michael = users(:michael)
   archer = users(:archer)

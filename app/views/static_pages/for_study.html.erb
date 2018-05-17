@@ -2,12 +2,13 @@
 <h1>For study</h1>
 <p>
   <center>Test for study!</center>
+ 
 </p>
 
-<div class="col-md"> <%= button_to "test", "#", class: "btn btn-primary", size:10 %> </div>
+<div class="col-md-6 col-md-offset-3"> <%= button_to "test", for_study_new_path, method: :get, class: "btn btn-primary", size:10 %> </div>
 
 <p>
-  <div class="schedules">
+  <div class="col-md-6 col-md-offset-3">
     <%= render @schedules %>
   </div>
 </p>

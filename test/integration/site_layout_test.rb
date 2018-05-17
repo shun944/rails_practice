@@ -37,4 +37,6 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_match @user.passive_relationships.count.to_s, response.body
   end
   
+  
+  
 end

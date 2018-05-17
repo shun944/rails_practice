@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   delete'/logout',   to: 'sessions#destroy'
   
   get  '/for_study', to: 'static_pages#for_study'
+  get  '/for_study_create', to: 'static_pages#for_study_new'
+  post '/for_study_create', to: 'static_pages#for_study_create'
   
   resources :users do
     member do
@@ -27,4 +29,5 @@ Rails.application.routes.draw do
   resources :password_resets,   only: [:new, :create, :edit, :update]
   resources :microposts,        only: [:create, :destroy]
   resources :relationships,     only: [:create, :destroy]
+  resources  :schedules,         only: [:for_study_create, :for_study_new]
 end

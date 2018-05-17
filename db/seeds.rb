@@ -44,7 +44,7 @@ followers.each { |follower| follower.follow(user) }
 #スケジュール
 users = User.order(:created_at).take(3)
 2.times do
-  title = Faker::Lorem.words
+  title = Faker::Lorem.word
   content = Faker::Lorem.sentence(5)
   users.each { |user2| user2.schedules.create!(content: content,title: title) }
 end
