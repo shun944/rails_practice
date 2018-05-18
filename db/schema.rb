@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180514001837) do
+ActiveRecord::Schema.define(version: 20180518084348) do
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"
@@ -38,6 +38,9 @@ ActiveRecord::Schema.define(version: 20180514001837) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.date "date"
+    t.string "place"
+    t.boolean "active_flag", default: false, null: false
     t.index ["user_id", "created_at"], name: "index_schedules_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_schedules_on_user_id"
   end
