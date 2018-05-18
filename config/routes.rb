@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   
   get  '/for_study', to: 'schedules#for_study'
   get  '/for_study_new', to: 'schedules#for_study_new'
+  get  '/for_study_create', to: 'schedules#for_study_new'
   post '/for_study_create', to: 'schedules#for_study_create'
   
   resources :users do

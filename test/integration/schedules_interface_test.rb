@@ -16,6 +16,16 @@ class SchedulesInterfaceTest < ActionDispatch::IntegrationTest
                                     content: "" } }
     end
     assert_select 'div#error_explanation'
+    #有効な送信
+    title = "title"
+    content = "test_content"
+    assert_difference 'Schedule.count', 1 do
+      post for_study_create_path, params: { schedule: { title: title,
+                                      content: content } }
+    end
+    assert_redirected_to for_study_url
+    follow_redirect!
+    assert_match content, response.body
   end
     
 end
