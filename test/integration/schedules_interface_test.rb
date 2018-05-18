@@ -15,6 +15,7 @@ class SchedulesInterfaceTest < ActionDispatch::IntegrationTest
       post for_study_create_path, params: { schedule: { title: "",
                                     content: "" } }
     end
+    assert_select 'div#error_explanation'
   end
     
 end

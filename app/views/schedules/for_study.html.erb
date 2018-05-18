@@ -1,0 +1,17 @@
+<% provide(:title, "For study") %>
+<div class="row">
+  <h1>For study</h1>
+  <p>
+    <center>Test for study!</center>
+   
+  </p>
+  
+  <div class="col-md-6 col-md-offset-3"> <%= button_to "test", for_study_new_path, method: :get, class: "btn btn-primary", size:10 %> </div>
+  
+  <p>
+    <div class="col-md-6 col-md-offset-3">
+      <%= render @schedules %>
+      <%= will_paginate @schedules %>
+    </div>
+  </p>
+</div>

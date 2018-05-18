@@ -16,9 +16,9 @@ Rails.application.routes.draw do
   post '/login',     to: 'sessions#create'
   delete'/logout',   to: 'sessions#destroy'
   
-  get  '/for_study', to: 'static_pages#for_study'
-  get  '/for_study_new', to: 'static_pages#for_study_new'
-  post '/for_study_create', to: 'static_pages#for_study_create'
+  get  '/for_study', to: 'schedules#for_study'
+  get  '/for_study_new', to: 'schedules#for_study_new'
+  post '/for_study_create', to: 'schedules#for_study_create'
   
   resources :users do
     member do

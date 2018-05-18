@@ -15,29 +15,7 @@ class StaticPagesController < ApplicationController
   def contact
   end
   
-  def for_study
-    @user = current_user
-    @schedules = Schedule.all.paginate(page: params[:page])
-  end
   
-  def for_study_new
-    @schedule = Schedule.new
-  end
-  
-  def for_study_create
-    @schedule = current_user.schedules.build(schedule_params)
-    if @schedule.save
-      flash[:success] = "Schedule created."
-      redirect_to for_study_url
-    else
-      redirect_to for_study_url
-    end
-  end
-  
-  def give
-    #id = params[:id]
-    user_params
-  end
   
   private
   
