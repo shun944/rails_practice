@@ -46,7 +46,7 @@ users = User.order(:created_at).take(3)
 2.times do
   title = Faker::Lorem.word
   content = Faker::Lorem.sentence(5)
-  date = '2018-06-30'
+  date = '2018-06-29'
   place = Faker::University.name
   users.each { |user2| user2.schedules.create!(content: content,title: title, 
                           date: date, place: place ) }
