@@ -1,4 +1,9 @@
 class SchedulesController < ApplicationController
+  
+  def show
+    @schedule = Schedule.find(params[:id])
+  end
+  
   def for_study
     @user = current_user
     @schedules = Schedule.all.paginate(page: params[:page], per_page: 3)
