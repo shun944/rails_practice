@@ -1,7 +1,7 @@
 <div id="schedule-<%= schedule.id %>">
   
   <div class="box29">
-    <div class="box-title"><%= schedule.title %></div>
+    <div class="box-title"><%= link_to schedule.title, schedule %></div>
     <p><%= schedule.content %></p>
     <span class= "timestamp">
       Posted <%= time_ago_in_words(schedule.created_at) %> ago.
