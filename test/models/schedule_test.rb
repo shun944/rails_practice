@@ -6,7 +6,7 @@ class ScheduleTest < ActiveSupport::TestCase
     #↓要修正
     #@schedule = Schedule.new(content: "test", title: "title_test",
      #                     user_id: @user.id)
-    @schedule = @user.schedules.build(content: "test", title: "title")
+    @schedule = @user.schedules.build(content: "test", title: "title", overview: "overview")
   end
   
   test "shoule be valid" do
@@ -20,6 +20,11 @@ class ScheduleTest < ActiveSupport::TestCase
   
   test "content should be at most 500 characters" do
     @schedule.content = "a" * 501
+    assert_not @schedule.valid?
+  end
+  
+  test "overview should be at most 500 characters" do
+    @schedule.overview = "a" * 501
     assert_not @schedule.valid?
   end
   

@@ -308,3 +308,74 @@ span.picture {
     border: 0;
   }
 }
+
+.box_for_schedule {
+    margin: 2em 0;
+    background: #dcefff;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 50px 40px 40px auto;
+    grid-template-areas: "title title"
+                          "place_title place"
+                          "date_title date"
+                          "content content";
+}
+.box_for_schedule .title {
+    grid-area: title;
+    font-size: 1.2em;
+    background: #5fb3f5;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid #000;
+    display:inline-block;
+
+}
+.box_for_schedule .auther {
+    text-align: right;
+}
+.box_for_schedule p {
+    padding: 15px 20px;
+    margin: 0;
+}
+.box_for_schedule .place_title {
+    padding: 15px 20px;
+    margin: 0;
+    background: #0fd3ec;
+    grid-area: place_title;
+    border-bottom: 1px solid #000;
+    text-align: center;
+}
+
+.box_for_schedule .date_title {
+    padding: 15px 20px;
+    margin: 0;
+    background: #0fd3ec;
+    grid-area: date_title;
+    border-bottom: 1px solid #000;
+    text-align: center;
+}
+
+.box_for_schedule .place {
+    padding: 15px 20px;
+    margin: 0;
+    grid-area: place;
+    border-bottom: 1px solid #000;
+    text-align: center;
+}
+
+.box_for_schedule .date {
+    padding: 15px 20px;
+    margin: 0;
+    grid-area: date;
+    border-bottom: 1px solid #000;
+    text-align: center;
+}
+
+.box_for_schedule .content {
+    padding: 15px 20px;
+    margin: 0;
+    grid-area: content;
+}

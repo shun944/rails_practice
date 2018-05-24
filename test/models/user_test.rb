@@ -87,7 +87,7 @@ class UserTest < ActiveSupport::TestCase
  
  test "associated schedules should be destroyed" do
   @user.save
-  @user.schedules.create!(title: "test", content: "test")
+  @user.schedules.create!(title: "test", content: "test", overview: "test")
   assert_difference 'Schedule.count', -1 do
    @user.destroy
   end

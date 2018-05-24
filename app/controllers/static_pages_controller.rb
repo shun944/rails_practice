@@ -25,7 +25,7 @@ class StaticPagesController < ApplicationController
     end
     
     def schedule_params
-      params.require(:schedule).permit(:title, :content)
+      params.require(:schedule).permit(:title, :content, :overview)
     end
   
 end

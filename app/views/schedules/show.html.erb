@@ -1,4 +1,16 @@
+<%= provide(:title, "Schedule") %>
+
 <%= @schedule.date %>,,,
 <%= @schedule.place %>,,,
 <%= @schedule.content %>,,,
 <%= @schedule.id %>...
+
+<div class="box_for_schedule">
+    <div class="title"><%= @schedule.title %></div>
+    <div class="place_title">Place</div>
+    <div class="place"><%= @schedule.place %></div>
+    <div class="date_title">Deadline</div>
+    <div class="date"><%= @schedule.date %></div>
+    <div class="content"><%= @schedule.content %></div>
+</div>
+
