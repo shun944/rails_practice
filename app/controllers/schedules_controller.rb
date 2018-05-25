@@ -1,4 +1,5 @@
 class SchedulesController < ApplicationController
+  before_action :correct_user_for_schedule, only: [:edit, :update]
   
   def show
     @schedule = Schedule.find(params[:id])
@@ -51,5 +52,12 @@ class SchedulesController < ApplicationController
     
     def schedule_params
       params.require(:schedule).permit(:title, :content, :overview, :date, :place)
+    end
+    
+    #beforeアクション
+    def correct_user_for_schedule
+      @schedule = Schedule.find(params[:id])
+      @user = User.find(@schedule.user_id)
+      redirect_to(root_url) unless current_user?(@user)
     end
 end
