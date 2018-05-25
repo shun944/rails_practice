@@ -8,6 +8,16 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
   end
   
+  def update
+    @schedule = Schedule.find(params[:id])
+    if @schedule.update_attributes(schedule_params)
+      flash[:success] = "Schedule updated"
+      redirect_to @schedule
+    else
+      render'edit'
+    end
+  end
+  
   def for_study
     @user = current_user
     @schedules = Schedule.all.paginate(page: params[:page], per_page: 3)
