@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180522080041) do
+ActiveRecord::Schema.define(version: 20180527073835) do
+
+  create_table "goods", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "schedule_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["schedule_id"], name: "index_goods_on_schedule_id"
+    t.index ["user_id", "schedule_id"], name: "index_goods_on_user_id_and_schedule_id", unique: true
+    t.index ["user_id"], name: "index_goods_on_user_id"
+  end
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"
@@ -42,6 +52,8 @@ ActiveRecord::Schema.define(version: 20180522080041) do
     t.string "place"
     t.boolean "active_flag", default: false, null: false
     t.string "overview"
+    t.integer "target_value", default: 0
+    t.integer "good_count", default: 0
     t.index ["user_id", "created_at"], name: "index_schedules_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_schedules_on_user_id"
   end
