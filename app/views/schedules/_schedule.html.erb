@@ -2,12 +2,12 @@
   
   <div class="box29">
     <div class="box-title"><%= link_to schedule.title, schedule %></div>
-    <p><%= schedule.content %></p>
+    <p><%= schedule.overview %></p>
     <span class= "timestamp">
       Posted <%= time_ago_in_words(schedule.created_at) %> ago.
     </span>
     <div class="auther">
-      Planned by  User.find(schedule.user_id).name 
+      Planned by  <%= User.find(schedule.user_id).name %> 
     </div>
   </div>
 </div>

@@ -7,8 +7,10 @@ class GoodsController < ApplicationController
       @schedule.iine(current_user)
       @schedule.reload
       respond_to do |format|
+        #require 'byebug'; byebug
+        logger.debug(format)
         format.html { redirect_to request.referrer || root_url }
-        format.js
+        #format.js
       end
     end
   end
@@ -20,7 +22,7 @@ class GoodsController < ApplicationController
       @schedule.reload
       respond_to do |format|
         format.html { redirect_to request.referrer || root_url }
-        format.js
+        #format.js
       end
     end
   end
