@@ -15,7 +15,7 @@ class Schedule < ApplicationRecord
     
     #"いいね"を解除する
     def del_iine(user)
-        likes.find_by(user_id: user.id).destroy
+        goods.find_by(user_id: user.id).destroy
     end
     
     #現在のユーザーが"いいね"をしていたらtrue

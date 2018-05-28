@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180527073835) do
+ActiveRecord::Schema.define(version: 20180528051055) do
 
   create_table "goods", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20180527073835) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "picture"
+    t.integer "likes_count", default: 0, null: false
     t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_microposts_on_user_id"
   end
@@ -54,6 +55,7 @@ ActiveRecord::Schema.define(version: 20180527073835) do
     t.string "overview"
     t.integer "target_value", default: 0
     t.integer "good_count", default: 0
+    t.integer "goods_count", default: 0, null: false
     t.index ["user_id", "created_at"], name: "index_schedules_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_schedules_on_user_id"
   end
