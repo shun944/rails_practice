@@ -1,5 +1,5 @@
 <% if !current_user?(schedule.user_id) %>
-  <span class="good">
+  <span class="good_button">
     <% if schedule.iine?(current_user) %>
       <%= form_for(schedule.goods.find_by(user_id: current_user.id), method: :delete, remote: true) do |f| %>
         <%= button_tag(class: "btn btn-default btn-xs") do %>

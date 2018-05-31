@@ -318,7 +318,8 @@ span.picture {
     grid-template-areas: "title title"
                           "place_title place"
                           "date_title date"
-                          "content content";
+                          "content content"
+                          "good_title good";
 }
 .box_for_schedule .title {
     grid-area: title;
@@ -377,4 +378,34 @@ span.picture {
     padding: 15px 20px;
     margin: 0;
     grid-area: content;
+    border-bottom: 1px solid #000;
+}
+
+.box_for_schedule .good_title {
+    line-height: 1px;
+    height: 10px;
+    padding: 15px 20px;
+    margin: 0;
+    background: #0fd3ec;
+    grid-area: good_title;
+    
+    text-align: center;
+}
+
+.box_for_schedule .good {
+    line-height: 1px;
+    height: 10px;
+    padding: 15px 20px;
+    margin: 0;
+    grid-area: good;
+    text-align: center;
+}
+
+.box_for_schedule .good_button {
+    line-height: 10px;
+    height: 10px;
+    padding: 0px 0px;
+    margin: 0;
+    grid-area: good;
+    float: right;
 }

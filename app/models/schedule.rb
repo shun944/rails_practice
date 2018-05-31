@@ -7,7 +7,10 @@ class Schedule < ApplicationRecord
     validates :title,      presence: true, length: { maximum: 50 }
     validates :overview,   presence: true, length: { maximum: 500 }
     validates :content,    presence: true, length: { maximum: 500 }
-    
+    validates :place,      presence: true, length: { maximum: 100 }
+    validates :target_value, presence: true, numericality: {
+                                                    greater_than: 1
+                                                    }
     #"いいね"する
     def iine(user)
         goods.create(user_id: user.id)

@@ -12,11 +12,14 @@
     <div class="date_title">Deadline</div>
     <div class="date"><%= @schedule.date %></div>
     <div class="content"><%= @schedule.content %></div>
+    <div class = "good_title">Target value</div>
+    <div class = "good"><%= @schedule.target_value %></div>
     <% if current_user.id == @schedule.user_id %>
       
     <% else %>
-      <%= render "goods/good", schedule: @schedule %>
+      <div class = "good_button"><%= render "goods/good", schedule: @schedule %></div>
     <% end %>
+    
 </div>
 
 

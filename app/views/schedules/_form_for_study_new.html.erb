@@ -10,6 +10,12 @@
   <%= f.label :content %>
   <%= f.text_field :content, class: 'form-control' %>
   
+  <%= f.label :place %>
+  <%= f.text_field :place, class: 'form-control' %>
+  
+  <%= f.label :target_value %>
+  <%= f.number_field :target_value, class: 'form-control' , value: 2, min: 2 %>
+  
   <%= f.label :date %>
   <%= f.date_select :date, {}, class: 'form-control' %>
 
