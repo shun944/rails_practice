@@ -10,8 +10,13 @@
   
   <p>
     <div class="col-md-6 col-md-offset-3">
-      <%= render @schedules.find(active_flag: false) %>
-      <%= will_paginate @schedules %>
+      <% @schedules.each do |schedule| %>
+        <% if schedule.active_flag == false %>
+          <%= render 'schedules/schedule', schedule: schedule %>
+          <%= will_paginate @schedules %>
+        <% end %>
+      <% end %>
+      
     </div>
   </p>
 </div>
