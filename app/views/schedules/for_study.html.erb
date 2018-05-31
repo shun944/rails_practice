@@ -13,10 +13,9 @@
       <% @schedules.each do |schedule| %>
         <% if schedule.active_flag == false %>
           <%= render 'schedules/schedule', schedule: schedule %>
-          <%= will_paginate @schedules %>
         <% end %>
       <% end %>
-      
+      <%= will_paginate @schedules_f %>
     </div>
   </p>
 </div>

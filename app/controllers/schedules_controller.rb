@@ -1,6 +1,11 @@
 class SchedulesController < ApplicationController
   before_action :correct_user_for_schedule, only: [:edit, :update]
   
+  def index
+    @schedules_t = Schedule.where(active_flag: true).paginate(page: params[:page])
+    @schedules_f = Schedule.where(active_flag: false).paginate(page: params[:page])
+  end
+  
   def show
     @schedule = Schedule.find(params[:id])
   end
