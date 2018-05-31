@@ -1,10 +1,6 @@
 class SchedulesController < ApplicationController
   before_action :correct_user_for_schedule, only: [:edit, :update]
   
-  def index
-    @schedules_t = Schedule.where(active_flag: true).paginate(page: params[:page])
-    @schedules_f = Schedule.where(active_flag: false).paginate(page: params[:page])
-  end
   
   def show
     @schedule = Schedule.find(params[:id])
@@ -27,10 +23,15 @@ class SchedulesController < ApplicationController
   def for_study
     @user = current_user
     @schedules = Schedule.all.paginate(page: params[:page], per_page: 3)
+    @schedules_t = Schedule.where(active_flag: true).paginate(page: params[:page], per_page: 3)
+    @schedules_f = Schedule.where(active_flag: false).paginate(page: params[:page], per_page: 3)
   end
   
   def for_study_new
     @schedule = Schedule.new
+  end
+  
+  def for_study_activated
   end
   
   def for_study_create
