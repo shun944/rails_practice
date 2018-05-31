@@ -51,7 +51,7 @@ class SchedulesController < ApplicationController
     end
     
     def schedule_params
-      params.require(:schedule).permit(:title, :content, :overview, :date, :place)
+      params.require(:schedule).permit(:title, :content, :overview, :date, :place, :target_value, :active_flag)
     end
     
     #beforeアクション

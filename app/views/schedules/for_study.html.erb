@@ -10,7 +10,7 @@
   
   <p>
     <div class="col-md-6 col-md-offset-3">
-      <%= render @schedules %>
+      <%= render @schedules.find(active_flag: false) %>
       <%= will_paginate @schedules %>
     </div>
   </p>

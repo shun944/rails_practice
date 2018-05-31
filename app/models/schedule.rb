@@ -9,7 +9,7 @@ class Schedule < ApplicationRecord
     validates :content,    presence: true, length: { maximum: 500 }
     validates :place,      presence: true, length: { maximum: 100 }
     validates :target_value, presence: true, numericality: {
-                                                    greater_than: 1
+                                                    only_integer: true, greater_than: 1
                                                     }
     #"いいね"する
     def iine(user)
