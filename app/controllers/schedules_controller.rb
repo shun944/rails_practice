@@ -32,6 +32,7 @@ class SchedulesController < ApplicationController
   end
   
   def for_study_activated
+    @schedules_t = Schedule.where(active_flag: true).paginate(page: params[:page], per_page: 3)
   end
   
   def for_study_create
@@ -57,7 +58,7 @@ class SchedulesController < ApplicationController
     end
     
     def schedule_params
-      params.require(:schedule).permit(:title, :content, :overview, :date, :place, :target_value, :active_flag)
+      params.require(:schedule).permit(:title, :content, :overview, :date, :place, :target_value, :active_flag, :good_count)
     end
     
     #beforeアクション

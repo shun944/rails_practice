@@ -14,11 +14,21 @@ class Schedule < ApplicationRecord
     #"いいね"する
     def iine(user)
         goods.create(user_id: user.id)
+        #@schedule = Schedule.find(params[:id])
+        #puts 'bbbbbbbbbbbbbbbbbbbbb'
+        
+        #if @schedule.goods_count >= @schedule.target_value
+         #   @schedule.active_flag = true
+          #  puts 'aaaaaaaaaaaaaaaaaaaaaa'
+     #   end
     end
     
     #"いいね"を解除する
     def del_iine(user)
         goods.find_by(user_id: user.id).destroy
+        #if schedule.goods_count < schedule.target_value
+         #   active_flag = false
+        #end
     end
     
     #現在のユーザーが"いいね"をしていたらtrue
