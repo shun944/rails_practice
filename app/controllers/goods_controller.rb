@@ -7,9 +7,8 @@ class GoodsController < ApplicationController
       @schedule.iine(current_user)
       @schedule.reload
       if @schedule.goods_count >= @schedule.target_value
-        @schedule.active_flag = true
+        @schedule.update_attribute(:active_flag, true)
       end
-      #@schedule.reload
       respond_to do |format|
         #require 'byebug'; byebug
         logger.debug(format)
@@ -25,7 +24,7 @@ class GoodsController < ApplicationController
       @schedule.del_iine(current_user)
       @schedule.reload
       if @schedule.goods_count < @schedule.target_value
-        @schedule.active_flag = false
+        @schedule.update_attribute(:active_flag, false)
       end
       respond_to do |format|
         format.html { redirect_to request.referrer || root_url }
