@@ -11,11 +11,7 @@
   
   <p>
     <div class="col-md-6 col-md-offset-3">
-      <% @schedules.each do |schedule| %>
-        <% if schedule.active_flag == false %>
-          <%= render 'schedules/schedule', schedule: schedule %>
-        <% end %>
-      <% end %>
+      <%= render @schedules_f%>
       <%= will_paginate @schedules_f %>
     </div>
   </p>

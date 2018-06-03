@@ -1,1 +1,13 @@
-hello
+<% provide(:title, "Activeted Schedules") %>
+<div class="row">
+  <h1>Activeted Schedules</h1>
+  
+  <div class="col-md-6 col-md-offset-3"> <%= button_to "Make your Schedule!", for_study_new_path, method: :get, class: "btn btn-primary", size:10 %> </div>
+  
+  <p>
+    <div class="col-md-6 col-md-offset-3">
+        <%= render @schedules_t %>
+        <%= will_paginate @schedules_t %>
+    </div>
+  </p>
+</div>
