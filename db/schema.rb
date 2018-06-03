@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180528051055) do
+ActiveRecord::Schema.define(version: 20180603073900) do
 
   create_table "goods", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20180528051055) do
     t.integer "target_value", default: 0
     t.integer "good_count", default: 0
     t.integer "goods_count", default: 0, null: false
+    t.date "deadline"
     t.index ["user_id", "created_at"], name: "index_schedules_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_schedules_on_user_id"
   end
