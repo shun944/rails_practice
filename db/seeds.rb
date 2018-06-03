@@ -47,8 +47,10 @@ users = User.order(:created_at).take(3)
   title = Faker::Lorem.word
   content = Faker::Lorem.sentence(5)
   date = '2018-06-29'
+  deadline = '2018-05-20'
   place = Faker::University.name
   overview = Faker::Job.field
+  target_value = '2'
   users.each { |user2| user2.schedules.create!(content: content,title: title, 
-                          date: date, place: place, overview: overview ) }
+                          date: date, deadline: deadline, place: place, overview: overview, target_value: target_value ) }
 end

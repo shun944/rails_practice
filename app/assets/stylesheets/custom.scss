@@ -318,6 +318,7 @@ span.picture {
     grid-template-areas: "title title"
                           "place_title place"
                           "date_title date"
+                          "deadline_title deadline"
                           "content content"
                           "good_title good";
 }
@@ -358,6 +359,15 @@ span.picture {
     text-align: center;
 }
 
+.box_for_schedule .deadline_title {
+    padding: 15px 20px;
+    margin: 0;
+    background: #0fd3ec;
+    grid-area: deadline_title;
+    border-bottom: 1px solid #000;
+    text-align: center;
+}
+
 .box_for_schedule .place {
     padding: 15px 20px;
     margin: 0;
@@ -370,6 +380,14 @@ span.picture {
     padding: 15px 20px;
     margin: 0;
     grid-area: date;
+    border-bottom: 1px solid #000;
+    text-align: center;
+}
+
+.box_for_schedule .deadline {
+    padding: 15px 20px;
+    margin: 0;
+    grid-area: deadline;
     border-bottom: 1px solid #000;
     text-align: center;
 }
