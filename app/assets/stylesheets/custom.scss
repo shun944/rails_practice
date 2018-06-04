@@ -427,3 +427,15 @@ span.picture {
     grid-area: good;
     float: right;
 }
+
+.back {
+    #border:1px solid #cccccc;
+    height: 200px;
+    position: relative;
+}
+
+.back back_button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
